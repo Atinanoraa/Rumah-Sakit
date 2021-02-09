@@ -1,0 +1,12 @@
+1. Query Total order, total Item, total qty, total ongkir, total discount, total pembayaran dari sebulan terakhir
+2. Query jumlah order dari masing-masing Customer dalam sebulan
+3. Query  jumlah order ke Agent oleh Customer dalam sebulan
+4. Query  total keuntungan yg diperoleh masing-masing Agent berdasar (harga
+agent-harga jual) dalam sebulan
+5. laporan penjualan masing-masing Item beserta qty dan total harga dalam sebulan
+6. laporan penjualan masing-masing Category Produk beserta qty dan total harga dalam sebulan
+7. List 10 produk paling banyak terjual
+8. List 10 top customer paling banyak pembelian
+9. List 10 top agent paling banak mendapatkan customer
+
+SELECT order_detail.product_id,product.product_name, COUNT(order_detail.product_id) as total_terjual FROM order_detail INNER JOIN product ON order_detail.product_id = product.id GROUP BY order_detail.product_id ORDER BY `total_terjual` DESC LIMIT 10
